@@ -14,7 +14,9 @@ namespace CountriesExplorer.Prism.ViewModels
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Main Page";
+            Title = "Countries Explorer";
         }
+
+
     }
 }

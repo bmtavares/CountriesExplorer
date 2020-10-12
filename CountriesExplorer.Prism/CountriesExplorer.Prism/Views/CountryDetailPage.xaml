@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"     
+             x:Class="CountriesExplorer.Prism.Views.CountryDetailPage">
+
+
+    <StackLayout Padding="5">
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
+                                                    Aspect="AspectFill"
+                                                    Source="{Binding Country.Flag}" 
+                                                    CacheDuration= "50"
+                                                    Margin="5"
+                                                    RetryCount= "3"
+                                                    RetryDelay= "600"
+                                                    WidthRequest="100"/>
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Text="{Binding Country.Name}"/>
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Country.Alpha2Code}"/>
+                    <Label Grid.Row="2"
+                           Grid.Column="1"
+                           Text="{Binding Country.Alpha3Code}"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
